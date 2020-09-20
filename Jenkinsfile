@@ -38,6 +38,12 @@ pipeline {
             sh 'docker push sreddy12333/addressbook:1.0'
             }
             }
+            stage('deploy') {
+            steps {
+                sh 'sudo kubectl apply -f adressbook-deployment.yaml'
+                sh 'sudo kubectl apply -f addressbook-service.yaml'
+            }
+        }    
     }
 }
 }
