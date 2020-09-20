@@ -12,11 +12,11 @@ pipeline {
           stage('build and push Docker image'){
 		 steps {
 			script{
-				sh 'docker build -f ./docker-training/Dockerfile -t sreddy12333/addressbook:$Docker_tag .'
+				sh 'docker build -f ./docker-training/Dockerfile -t sreddy12333/addressbook:1.0 .'
 				withCredentials([string(credentialsId: 'sreddy12333', variable: 'dockerhub')]) {
 					sh 'docker login -u sreddy12333 -p $dockerhub'
-					sh 'docker push sreddy12333/addressbook:1.0:$Docker_tag'
-					//sh 'docker rmi sreddy12333/devops-training:$Docker_tag'
+					sh 'docker push sreddy12333/addressbook:1.0'
+					//sh 'docker rmi sreddy12333/addressbook:1.0'
 				}
 			}
 		 }
