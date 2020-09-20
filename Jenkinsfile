@@ -23,7 +23,7 @@ pipeline {
         }
         stage("Build image") {
             steps {
-             sh 'docker build -f ./DevOpsClassCodes/Dockerfile1 -t addressbook:latest .'
+             sh 'docker build -f ./var/lib/jenkins/workspace/k8s-build-pipeline/DevOpsClassCodes/Dockerfile1 -t addressbook:latest .'
             }
         }
         stage("Tag the image") {
