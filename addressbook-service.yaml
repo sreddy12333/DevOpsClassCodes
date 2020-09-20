@@ -9,6 +9,6 @@ spec:
     app: addressbook-project
   type: NodePort
   ports:
-    - port: 8080
-      targetPort: 8080
-      nodePort: 30180
+    - port: 80
+      targetPort: 80
+      nodePort: 30700
