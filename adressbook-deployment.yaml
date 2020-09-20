@@ -17,4 +17,4 @@ spec:
         image: sreddy12333/addressbook:1.0
         
         ports:
-        - containerPort: 80
+        - containerPort: 8080
