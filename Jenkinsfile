@@ -23,7 +23,7 @@ pipeline {
         }
         stage("Build image") {
             steps {
-             sh 'docker build -t addressbook:latest .'
+             sh 'docker build -f ./DevOpsClassCodes/Dockerfile -t addressbook:latest .'
             }
         }
         stage("Tag the image") {
