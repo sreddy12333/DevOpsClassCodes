@@ -1,18 +1,13 @@
-def getDockerTag() {
- def tag = sh script: 'git rev-parse HEAD', returnStdout: true 
- return tag
-}
+
 
 pipeline {
     agent any
-    environment {
-          Docker_tag = getDockerTag()
-      }
+   
     stages {
           stage('build and push Docker image'){
 		 steps {
 			script{
-				sh 'docker build -f ./docker-training/Dockerfile -t sreddy12333/addressbook:1.0 .'
+				sh 'docker tag addressbook:latest sreddy1233/addressbook:1.0 .'
 				withCredentials([string(credentialsId: 'sreddy12333', variable: 'dockerhub')]) {
 					sh 'docker login -u sreddy12333 -p $dockerhub'
 					sh 'docker push sreddy12333/addressbook:1.0'
