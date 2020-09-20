@@ -33,7 +33,7 @@ pipeline {
             sh 'docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD'
             sh 'docker push daidasunny/addressbook:1.0'
             }
-        
+            }
     }
 }
 }
