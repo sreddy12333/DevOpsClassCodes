@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('deploy') {
             steps {
-                sh 'kubectl apply -f adressbook-deployment.yaml'
-                sh 'kubectl apply -f addressbook-service.yaml'
+                sh 'sudo -S kubectl apply -f adressbook-deployment.yaml'
+                sh 'sudo -S kubectl apply -f addressbook-service.yaml'
             }
         }      
     }
