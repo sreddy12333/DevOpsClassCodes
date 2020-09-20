@@ -7,7 +7,7 @@ pipeline {
           stage('build and push Docker image'){
 		 steps {
 			script{
-			        sh 'docker build -t addressbook:latest .
+			        sh 'docker build -t addressbook:latest .'
 				sh 'docker tag addressbook:latest sreddy1233/addressbook:1.0 .'
 				withCredentials([string(credentialsId: 'sreddy12333', variable: 'dockerhub')]) {
 					sh 'docker login -u sreddy12333 -p $dockerhub'
